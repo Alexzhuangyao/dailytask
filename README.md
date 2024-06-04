@@ -56,3 +56,19 @@
 #### 6、更新程序
 
 在代码根目录下执行 `git pull`即可，不用重新下载
+
+
+
+def form_hex_data(string):
+    if not isinstance(string, str):
+        raise ValueError('Input must be a string.')
+
+    if len(string) > 64:
+        raise ValueError('String length exceeds 64 characters.')
+
+    return '0' * (64 - len(string)) + string
+
+
+print(form_hex_data("0x533219359518A5E1F62fee5d9157AB8B2846a60c"[2:]))
+print(form_hex_data(hex(int("85"))[2:]))
+print(form_hex_data(hex(int("20240603"))[2:]))
